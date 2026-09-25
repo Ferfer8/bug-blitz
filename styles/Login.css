@@ -1,0 +1,325 @@
+/* Resets default margin, padding and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Styling for header section (Logo & back arrow) */
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Styling for Logo & back arrow images */
+header img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for back to home link */
+.backHome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.backHome i {
+    font-size: 32px;
+}
+
+/* Turns back arrow and text green when either is hovered over */
+.backHome:hover {
+    color: #0B5345;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Black overlay layered over the background image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/bg/main_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Styling for signup conatiner */
+#container {
+    display: flex;
+}
+
+/* Styling for signup sub container */
+#box1 {
+    margin-right: 20px;
+}
+
+/* Styling for login & signup box */
+.box {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0 0, .2);
+    color: #fff;
+    border-radius: 15px;
+    padding: 30px 40px;
+}
+
+/* Styling for login & signup box heading */
+.box h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* Styling for content within input class in login & signup box */
+.box .input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+/* Styling for input fields */
+.input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+/* Styling for input placeholders */
+.input input::placeholder {
+    color: #fff;
+
+}
+
+/* Styling for passIcons */
+.input i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+/* Styling for login & signup button */
+.box .Btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #19463D;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Styling for content within link class */
+.link {
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+/* Styling for link to regsiter or login */
+.link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.link p a:hover {
+    text-decoration: underline;
+    /* underlines link when hovered over */
+    color: #16A085;
+}
+
+/* Styling for terms & conditions check box */
+.box .termCond {
+    font-size: 13px;
+    margin-top: 40px;
+
+}
+
+.termCond label input {
+    accent-color: #0B5345;
+}
+
+.termCond a {
+    color: #fff;
+}
+
+.termCond a:hover {
+    color: #16A085;
+}
+
+/* Styling for show password text element */
+h6 {
+    margin: 3px 0 0 20px;
+    color: #fff;
+}
+
+h6:hover {
+    cursor: pointer;
+    color: #16A085;
+}
+
+/* Styling for error handling*/
+.input.success input {
+    border-color: #2EA345;
+}
+
+.input.error input {
+    border-color: #E72D18;
+}
+
+.input .error {
+    color: #E72D18;
+    font-size: 10px;
+    height: 13px;
+}
+
+/* Stling for gender select filed*/
+.input select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 25px 10px 10px;
+
+}
+
+option {
+    color: #1C2833;
+}
+
+/* Styling for term and conditions modal */
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/bg/main_bg.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* Styling for term and conditions modal content*/
+.modalContent {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #707B7C;
+    width: 60%;
+    text-align: center;
+
+}
+
+/* Styles for modal close button*/
+.close {
+    color: #7F8C8D;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #1C2833;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Styling for success modal */
+.modal-signSuccess {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+}
+
+/* Styling for success modal content*/
+.success-modalContent {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 250px auto;
+    padding: 0 0 0 25px;
+    border: 1px solid #707B7C;
+    width: 20%;
+    height: 30%;
+    text-align: center;
+}
+
+.success-modalContent p {
+    margin: 20px 0;
+}
+
+.success-modalContent i {
+    font-size: 80px;
+    color: #19463D;
+}
+
+.success-modalContent span {
+    float: right;
+}
+
+.centrecontent {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-modalContent button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #19463D;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}

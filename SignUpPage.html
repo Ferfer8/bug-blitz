@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="styles\Login.css">
+    <link rel="icon" type="image/png" href="assets/bugs/bugG-favicon.png"> <!--Adds favicon to website-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--points to boxpassIcons CSS file hosted on the web -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--points to Bootstrap Icons CSS file hosted on the web -->
+</head>
+
+<body id="account">
+    <header>
+        <div id="header">
+            <a href="index.html"><img src="assets/Logo.png" alt="Bug Blitz Logo" width="150" height="150"></a>
+            <a href="index.html" class="backHome"><i class="bi bi-arrow-bar-left"></i> Back to home</a>
+        </div>
+    </header>
+    <!-- SignUp form -->
+    <div class="box" style="width:600px">
+        <form action="" id="sForm">
+            <h1>Sign Up</h1>
+            <div id="container">
+                <div id="box1">
+                    <div class="input">
+                        <input type="text" id="email" placeholder="Email" required>
+                        <i class='bx bxs-envelope'></i><!--boxpassIcons envelope passIcon -->
+                        <div class="error"></div>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="birthdate" placeholder="Date of Birth" onfocus="(this.type='date')"
+                            onblur="(this.type='text')" required>
+                        <i class='bx bxs-calendar'></i> <!--boxpassIcons calendar passIcon -->
+                        <div class="error"></div>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <i id="passIcon" class='bx bxs-lock'></i> <!--boxpassIcons padlock passIcon -->
+                        <h6 id="textToShow" onclick="showPassword('password', 'confirmPassword')">Show password</h6>
+                        <div class="error"></div>
+                    </div>
+                </div>
+                <div id="box2">
+                    <div class="input">
+                        <input type="text" id="username" placeholder="Username" required>
+                        <i class='bx bxs-user'></i> <!--boxpassIcons user passIcon -->
+                        <div class="error"></div>
+                    </div>
+                    <div class="input">
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="Male">male</option>
+                            <option value="Female">female</option>
+                        </select>
+                        <i class='bx bx-male-female'></i> <!--boxpassIcons male-female passIcon -->
+                        <div class="error"></div>
+                    </div>
+                    <div class="input">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <i id="passIcon2" class='bx bxs-lock'></i> <!--boxpassIcons padlock passIcon -->
+                        <div class="error"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Terms & condition checkbox-->
+            <div class="termCond">
+                <label><input type="checkbox" required> Agree to </label><a href="#" onclick="openModal('modal')">Terms
+                    & Conditions</a>
+            </div>
+
+            <button type="submit" class="Btn">Create account</button>
+
+            <!--Link to Login Page-->
+            <div class="link">
+                <p>Already have an account? <a href="LoginPage.html">Log in</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!--Terms & conditions modal-->
+    <div id="modal" class="modal">
+        <div class="modalContent">
+            <span class="close" onclick="closeModal('modal')">&times;</span>
+            <h1>Terms & Conditions</h1>
+            <!-- Tenor cat GIF (kept at the same 360px size as the old GIF) -->
+            <div style="max-width: 360px; margin: 0 auto;">
+                <div class="tenor-gif-embed" data-postid="3971686153073610452" data-share-method="host"
+                    data-aspect-ratio="1" data-width="100%"><a
+                        href="https://tenor.com/view/cat-jump-happy-happy-happy-gif-3971686153073610452">Cat Jump Happy
+                        Happy Happy Sticker</a>from <a href="https://tenor.com/search/cat+jump-stickers">Cat Jump
+                        Stickers</a></div>
+            </div>
+            <p>Make sure to have fun playing!</p>
+        </div>
+    </div>
+
+    <!--Success signup modal-->
+    <div id="modal-signSuccess" class="modal-signSuccess">
+        <div class="success-modalContent">
+            <span class="close" onclick="closeModal('modal-signSuccess')">&times;</span>
+            <div class="centrecontent">
+                <i class='bx bx-check-circle'></i>
+                <p>Sign Up successful</p>
+                <button onclick="loginPageRedirect()">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="script/validation.js" defer></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<!-- Loads the Tenor cat GIF in the terms & conditions modal -->
+<!-- defer attribute used to ensure script runs after HTML contect loads-->
+
+</html>

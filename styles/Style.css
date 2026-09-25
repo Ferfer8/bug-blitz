@@ -1,0 +1,1278 @@
+/* Font definitions */
+@font-face {
+    font-family: Anton;
+    src: url("../assets/fonts/Anton-Regular.ttf");
+}
+
+@font-face {
+    font-family: One;
+    src: url("../assets/fonts/OneNineNineFour-Regular.otf");
+}
+
+/* Resets default margin, padding, box-sizing & font-family for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    scroll-behavior: smooth;
+    /* Sets page to scroll smooth */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Styling for body of home page */
+#home {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: linear-gradient(#1C2833, #06382e);
+}
+
+/* Styling for navigation bar */
+#navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    /* High z-index to keep navbar infront of all elemnts */
+}
+
+/* Styling for navigation bar links*/
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.navContent {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 6px 15px;
+    color: #ffff;
+    background: #0B5345;
+    box-shadow: 1px 1px 4px #020807;
+}
+
+
+/* Styling to make bold, change background and font colour when hovered over */
+.navContent:hover {
+    background: #D5F5E3;
+    color: #117A65;
+    font-weight: bold;
+}
+
+/* Styling for the userIcon */
+#userIcon,
+#userIcon2,
+#userIcon3 {
+    color: #0B5345;
+    font-size: 40px;
+    background-color: #D5F5E3;
+    border: 1px solid #0B5345;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+/* Styling to change background colour and cursor when user icon is hovered over */
+#navBar i:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#iconList-item {
+    margin-left: 20px;
+}
+
+/* Styles for user menu container */
+.user-menu {
+    display: none;
+    position: absolute;
+    background-color: #2C3E50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles for list items inside user menu container */
+.user-menu li {
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Styles to change background colour of menu list item when hovered over */
+.user-menu li:hover {
+    background-color: #566573;
+}
+
+.user-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Styling for section with background images, name, slogan & play button */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    overflow-x: clip;
+    /* Trims the wide grass image so the page can't be scrolled sideways, which exposed a gap beside the background */
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+/* Parallax layer holding the bug; z-index keeps it above the dark overlay so the bug isn't dimmed */
+#bugLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Bug position within the hero; change top/left freely, the parallax is unaffected */
+#bug {
+    top: 190px;
+    left: 770px;
+}
+
+/* Container for the parallax background layers; sits behind all other hero elements */
+#bgLayers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Clips layers as they shift down so they never spill past the hero */
+    z-index: 0;
+}
+
+/* Each layer fills the hero; identical sizing keeps all layers aligned with each other */
+#bgLayers .bgLayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    /* Keeps the ground visible when the screen crops the image */
+    will-change: transform;
+}
+
+/* Dark overlay above all background layers (but below the text) so the hero text stands out */
+#bgLayers::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    /* Adjust the last value (0-1) to make the overlay lighter or darker */
+    pointer-events: none;
+}
+
+#grass {
+    top: 350px;
+    left: -160px;
+    z-index: 10;
+}
+
+#gameName {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    color: #fff;
+    font-family: Anton, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    z-index: 9;
+}
+
+#slogan {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    font-size: 20px;
+    z-index: 9;
+}
+
+
+#btn {
+    position: absolute;
+    top: 500px;
+    font-family: One, 'Courier New', Courier, monospace;
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 50px;
+    background: #fff;
+    color: #0B5345;
+    font-size: 30px;
+    display: inline-block;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+#btn:hover {
+    transform: scale(1.2);
+}
+
+/* Styling for 'how to play' section */
+#howToPlay {
+    position: relative;
+    padding: 100px;
+    background: #1C2833;
+    width: 100%;
+}
+
+#howToPlay h1 {
+    font-family: One, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #fff;
+    text-align: center;
+}
+
+#howToPlay video {
+    display: block;
+    margin: auto;
+}
+
+#instructions {
+    max-width: 825px;
+    margin: auto;
+}
+
+#instructions p {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    background-color: #061321;
+    /* border: 1px solid #273746; */
+    box-shadow: 2px 2px 16px 1px #0d2238;
+    border-radius: 10px;
+}
+
+/* Styling for body of mode page */
+#mode {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#1C2833, #2C3E50, #566573);
+}
+
+#pick {
+    text-align: center;
+    font-family: One, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 100px;
+}
+
+/* Styling for table used for layout of button images */
+#modeTbl {
+    margin-top: 150px;
+}
+
+#modeTbl img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+#modeTbl td {
+    padding: 40px;
+}
+
+/* Styling for body of LeaderBoard page */
+
+#leaderBoard {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#1C2833, #2C3E50, #566573);
+}
+
+/* Styling for parent div */
+#container {
+    display: flex;
+    column-gap: 300px;
+}
+
+/* Styling for child divs containing leaderbaord tables*/
+.lB {
+    max-width: 400px;
+    margin: 130px 0 70px 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 16px 1px #1C2833;
+}
+
+/* Styling for header section of leaderboard */
+#headerSection {
+    background: #0B5345;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 220px;
+    position: relative;
+}
+
+#headerSection h1 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    position: absolute;
+    margin-left: 48px;
+    left: -20px;
+    top: 48px;
+}
+
+
+#headerSection img {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+}
+
+
+/* Styling for table of leaderboard */
+.scoreTable {
+    background-color: #1C2833;
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+}
+
+
+.scoreTable th {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #B8BBB9;
+    text-transform: uppercase;
+    padding: 24px 16px 8px;
+}
+
+.scoreTable td {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px 16px;
+}
+
+.scoreTable tbody .username {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.scoreTable tbody tr:nth-child(2n) {
+    background-color: #273746;
+    /* Changes background colour of alternate rows */
+}
+
+.username {
+    text-align: left;
+}
+
+.score {
+    text-align: right;
+    width: 8ch;
+}
+
+.rank {
+    width: 4ch;
+    padding-left: 16px;
+}
+
+
+/* Styling for footer */
+
+footer {
+    height: 110px;
+    width: 100%;
+    background-color: #0B5345;
+    box-shadow: 2px 2px 16px 1px #4E4F4F;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    position: relative;
+    /* lets the logo be positioned inside the footer */
+
+}
+
+/* Styling for logo link in footer: pinned top-left, out of the text flow, so the icons and links centre across the full footer */
+footer > a:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+}
+
+footer img {
+    display: block;
+}
+
+/* Styling for links to GitHub & LinkedIn */
+footer a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Styling for passIcons */
+footer i {
+    font-size: 40px;
+    color: #fff;
+}
+
+footer a i:hover {
+    color: #1C2833;
+    /* Changes passIcon colour when hovered over */
+}
+
+footer p {
+    font-size: 16px;
+    color: #7F8C8D;
+}
+
+
+/* Styling for navigation section of footer */
+#footerNav {
+    margin: 5px;
+}
+
+#footerNav ul {
+    display: flex;
+    justify-content: center;
+}
+
+#footerNav ul li {
+    list-style: none;
+
+}
+
+#footerNav ul li a {
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Changes link colour, makes bold and underlined when hovered over */
+#footerNav ul li a:hover {
+    text-decoration: underline;
+    color: #1C2833;
+    font-weight: bold;
+}
+
+/* General Modals */
+
+/* General modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+
+/* Styles for content isnide modal*/
+.modalContent {
+    background-color: #2C3E50;
+    border-radius: 10px;
+    margin: 5px auto;
+    padding: 5px;
+    border: 1px solid #1C2B22;
+    width: 60%;
+    height: 95%;
+    text-align: center;
+}
+
+.modalContent .instructions p {
+    color: #fff;
+    background-color: #1C2833;
+    box-shadow: 2px 2px 16px 1px #1C2833;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    ;
+    text-align: center;
+    margin: 10px 10px;
+}
+
+/* Styles for the close button in modal*/
+.close {
+    color: #7F8C8D;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #273746;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* User info modal style*/
+.modal-userInfo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+/* Styles for content isnide user info modal*/
+.userInfo-modalContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1C2B22;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 50%;
+}
+
+.userInfo-modalContent h1 {
+    text-align: center;
+    font-family: One, sans-serif;
+    color: #fff;
+}
+
+.userInfo-modalContent ul {
+    list-style: none;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.userInfo-modalContent ul li {
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Styles to add a line under each li*/
+.userInfo-modalContent ul li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.userInfo-modalContent ul li a {
+    text-decoration: none;
+    padding: 15px;
+    color: #fff;
+}
+
+.userInfo-modalContent ul li a:hover {
+    background-color: #D5F5E3;
+    cursor: pointer;
+    color: #0B5345;
+}
+
+.userInfo-modalContent ul li .chevron-align {
+    margin-left: 35px;
+}
+
+/* Styles for sub-section within user info modal*/
+.modal-sub-section {
+    position: absolute;
+    top: 34%;
+    left: 40%;
+    background-color: #E9F7EF;
+    padding: 20px;
+    border: 3px solid #117A65;
+    width: 34%;
+    height: 37%;
+}
+
+/* Styles for specific modals that make up teh sub-section*/
+#accountModal {
+    display: none;
+}
+
+#helpModal {
+    display: none;
+    overflow-y: auto;
+    /* scrolls inside the panel when several answers make it too tall */
+}
+
+p,
+h1 {
+    padding: 10px;
+    color: #000;
+}
+
+/* FAQ accordion in the help sub-section */
+.faq-list {
+    margin-top: 10px;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(17, 122, 101, 0.3);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 4px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0B5345;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    color: #117A65;
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid #117A65;
+    outline-offset: 2px;
+}
+
+.faq-question i {
+    flex-shrink: 0;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+/* Animates between 0 and the answer's natural height */
+.faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.faq-answer.open {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
+}
+
+.faq-answer-inner p {
+    padding: 0 4px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.faq-answer-inner ul {
+    margin: 0 0 10px 24px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-answer,
+    .faq-question i {
+        transition: none;
+    }
+}
+
+#gameModal {
+    display: none;
+}
+
+#gameModal i {
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+#gameModal button {
+    height: 30px;
+    width: 30px;
+}
+
+#bugPic {
+    background-color: #fff;
+}
+
+.game-selection {
+    border-spacing: 5px;
+}
+
+/* Styles for iamges within the game sub-section*/
+.game-selection img {
+    width: 80px;
+    height: 80px;
+    box-shadow: 2px 2px 8px rgba(28, 40, 51, 0.45);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    object-fit: contain;
+    /* keeps each image's proportions instead of stretching it to the square */
+}
+
+/* Unlocked images get equal padding so they sit centred in ~80% of the card.
+   Locked tiles (.unlock-bug without .pointer-cursor) stay edge to edge so the cross still reaches the corners */
+.game-selection img:not(.unlock-bug),
+.game-selection img.pointer-cursor {
+    padding: 8px;
+}
+
+/* The padding shows the img's own background, so match it to the image files' white background */
+.game-selection img:not(.unlock-bug),
+.game-selection img.pointer-cursor {
+    background-color: #fff;
+}
+
+/* Per-image size tweaks (via padding, so the card itself stays the same size) */
+#beetlePic.pointer-cursor {
+    padding: 13px;
+    /* beetle fills its file edge to edge, so shrink it a little */
+}
+
+#defaultSparyPic {
+    padding: 0;
+    /* spray can is small and narrow in its file, so give it the whole card */
+}
+
+#antKillPic.pointer-cursor {
+    object-fit: fill;
+    padding: 8px 12px;
+    /* stretches the bottle a little wider than its natural proportions; lower the 12px to widen it more */
+}
+
+#spiderPic.pointer-cursor {
+    background-color: #ECECEE;
+    padding: 2px;
+    /* spider has extra empty space in its file, so enlarge it a little */
+}
+
+/* Hover effect for bug and blitz weapon images*/
+.game-selection img:hover {
+    cursor: not-allowed;
+    /* cursor set to not allowed for unlocked bugs and weapons*/
+    transform: scale(1.1);
+}
+
+
+.game-selection img.pointer-cursor:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Styles for selected bugs and weapon*/
+#bugSelection img.selected-item,
+#weaponSelection img.selected-item {
+    border: 3px solid #76D7C4;
+}
+
+
+#userDetails {
+    margin-top: 20px;
+}
+
+#userDetails p {
+    padding: 10px;
+}
+
+
+/* Styling for body of game page */
+#game {
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    /* keeps the background covering the whole window now that the canvas no longer stretches the page */
+    background-image: url('../assets/bg/main_bg.png');
+    background-size: cover;
+    cursor: none;
+    user-select: none;
+}
+
+/* Styling for timer */
+#timer {
+    padding: 30px;
+    max-height: 50px;
+    max-width: 200px;
+    margin-bottom: 0;
+    float: right;
+}
+
+/* Styling for heading of points */
+.points {
+    color: #fff;
+    font-size: 40px;
+}
+
+/* Positions score headings to right of page */
+#score {
+    margin: 30px 0 0 60px;
+    font-family: One, 'Courier New', Courier, monospace;
+}
+
+#hScore {
+    margin: 0 0 0 60px;
+    font-family: One, 'Courier New', Courier, monospace;
+}
+
+/* Styling for game start and end modal */
+.game-start-end-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0B5345;
+    z-index: 10000;
+}
+
+/* Styling for game start and end modal content */
+.game-start-end-modalContent {
+    margin: 5px auto;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.game-start-end-modalContent p {
+    color: #D5F5E3;
+    font-size: 150px;
+    font-family: One, 'Courier New', Courier, monospace;
+    margin-top: 300px;
+}
+
+/* Styling for game canvas */
+#gameCanvas {
+    /* Pinned to the top-left of the window so canvas coordinates match screen/mouse coordinates.
+       Without this it sat in the page flow below the score text, shifting every bug ~235px down */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* keeps the timer, score and buttons drawn above the bugs */
+}
+
+/* Styling for game cursor element */
+.cursor {
+
+    height: 170px;
+    width: 170px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none;
+    background-image: url('../assets/blitz_weapons/spray/spray1.png');
+}
+
+/* Styling for active state of game cursor element */
+.cursor.active {
+    height: 130px;
+    width: 150px;
+    transform: translate(-20%, -20%) rotate(-45deg);
+    background-image: url('../assets/blitz_weapons/spray/spray2.png');
+}
+
+.bug {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+/* Styling for game back button icon */
+#gameExit {
+    display: inline-block;
+    margin: 10px 0 3px 20px;
+    font-size: 50px;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#gameExit:hover {
+    color: #90EE90;
+}
+
+/* Styling for game pause button */
+#pauseBtn {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin: 10px 10px 10px 0;
+    background-color: #117A65;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pauseBtn i {
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Normal cursor in the top area of the game (above the "Score" text), set by game.js */
+#game.ui-zone {
+    cursor: default;
+}
+
+#game.ui-zone .cursor {
+    display: none;
+}
+
+/* Styling for game congratulations modal */
+#congratulationsModal {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+    /* dims and softens the game behind the modal */
+    animation: congratsBackdropIn 0.3s ease-out;
+}
+
+/* Card sizes to its content and is centred with inset + auto margins (works with display: block set in JS) */
+#congratulationsModal .modalContent {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: calc(100% - 32px);
+    max-width: 700px;
+    height: fit-content;
+    max-height: calc(100% - 32px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(213, 245, 227, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: congratsCardIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#congratulationsModal h1 {
+    margin: 0;
+    font-family: One, sans-serif;
+    color: #D5F5E3;
+    font-size: clamp(40px, 9vw, 68px);
+    line-height: 1.1;
+}
+
+#congratulationsModal p {
+    margin: 0;
+    max-width: 520px;
+    font-family: One, sans-serif;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#congratulationsModal img {
+    width: 180px;
+    height: 180px;
+    margin-top: 12px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(213, 245, 227, 0.25);
+    animation: congratsMysteryFloat 2.4s ease-in-out infinite;
+}
+
+#congratulationsModal a {
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+#congratulationsModal button {
+    font-family: One, sans-serif;
+    font-size: 24px;
+    padding: 12px 56px;
+    background-color: #D5F5E3;
+    color: #0B5345;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#congratulationsModal button:hover {
+    transform: scale(1.08);
+    background-color: #fff;
+}
+
+#congratulationsModal button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+@keyframes congratsBackdropIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes congratsCardIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes congratsMysteryFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+@media (max-width: 600px) {
+    #congratulationsModal .modalContent {
+        padding: 28px 20px;
+        gap: 16px;
+    }
+
+    #congratulationsModal p {
+        font-size: 16px;
+    }
+
+    #congratulationsModal img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #congratulationsModal,
+    #congratulationsModal .modalContent,
+    #congratulationsModal img {
+        animation: none;
+    }
+}
+/* Styling for body of credits page */
+#credits {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#1C2833, #06382e);
+}
+
+/* Top padding clears the absolutely positioned navbar */
+#creditsMain {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 150px 24px 60px;
+}
+
+/* Overrides the general p/h1 padding and black text so the dark page stays readable */
+#creditsMain h1 {
+    padding: 0;
+    font-family: One, sans-serif;
+    font-size: 70px;
+    color: #D5F5E3;
+    text-align: center;
+}
+
+#creditsMain .credits-intro,
+#creditsMain .credits-outro {
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+#creditsMain .credits-intro {
+    margin: 10px 0 20px;
+}
+
+#creditsMain .credits-outro {
+    margin-top: 50px;
+}
+
+#creditsMain h2 {
+    font-family: One, sans-serif;
+    font-size: 32px;
+    color: #fff;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #117A65;
+}
+
+/* Responsive grid: 4 per row on wide screens, fewer as the screen narrows */
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.credit-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #2C3E50;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 2px 2px 10px rgba(6, 19, 33, 0.6);
+}
+
+/* Every thumbnail area is the same size; contain keeps images uncropped and unstretched */
+.credit-thumb {
+    height: 150px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+.credit-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Pest control set shows its icons side by side in one card */
+.credit-card-set {
+    grid-column: span 2;
+}
+
+.credit-thumb-set {
+    display: flex;
+    gap: 8px;
+}
+
+.credit-thumb-set img {
+    flex: 1;
+    min-width: 0;
+}
+
+.credit-card h3 {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.credit-line {
+    color: #D5F5E3;
+    font-size: 14px;
+    text-decoration: underline;
+    flex-grow: 1;
+}
+
+.credit-line:hover {
+    color: #fff;
+}
+
+/* Credits link in the footer; same look before and after it's been visited */
+#creditsLink,
+#creditsLink:visited {
+    color: inherit;
+    /* matches the grey copyright text around it */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .credits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .credits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #creditsMain h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 340px) {
+    .credits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .credit-card-set {
+        grid-column: auto;
+    }
+}

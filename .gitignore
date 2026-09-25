@@ -1,0 +1,13 @@
+# Third-party assets (not included, see CREDITS.md)
+assets/bg/
+assets/elements/
+assets/bugs/
+assets/blitz_weapons/
+assets/shoes/
+assets/fonts/
+assets/sound_effects/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

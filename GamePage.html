@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="styles/Style.css">
+    <link rel="icon" type="image/png" href="assets/bugs/bugG-favicon.png"> <!--Adds favicon to website-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body id="game">
+
+    <!--Game exit, pause and timer & score display-->
+    <a id='gameExit' href="ModePage.html" aria-label="Exit game"><i class="bi bi-arrow-left-circle-fill"></i></a>
+    <button id="pauseBtn" onclick="gamePause()"><i class='bx bx-pause'></i></button>
+    <div id="timer">02:00</div>
+    <h1 id="score" class="points">Score: 0</h1>
+    <h1 id="hScore" class="points">Highscore: 0</h1>
+
+    <!--Game cursor-->
+    <div id="cursor" class="cursor"></div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!--Game-start countdown modal-->
+    <div id="countdownModal" class="game-start-end-modal">
+        <div class="game-start-end-modalContent">
+            <p id="countdown">3</p>
+        </div>
+    </div>
+
+    <!--Game-end modal-->
+    <div id="gameOverModal" class="game-start-end-modal">
+        <div class="game-start-end-modalContent">
+            <p id="countdown">Game Over!</p>
+        </div>
+    </div>
+
+    <!--Game congratulations  modal-->
+    <div id="congratulationsModal" class="modal">
+        <div class="modalContent">
+            <h1>Congratulations!</h1>
+            <p>You have unlocked a new bug and weapon! Head over to
+                user Settings to find out which one!</p>
+            <img src="assets/elements/mystery.jpg" alt="question marks">
+            <a href="#"><button onclick="closeModal('congratulationsModal')"> OK</button></a>
+        </div>
+    </div>
+
+    <!--Audio for game sounds-->
+    <audio id="blitzSound" src="assets/sound_effects/point.mp3"></audio>
+    <audio id="mistakeSound" src="assets/sound_effects/mistake.mp3"></audio>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="script/game.js" defer></script> <!-- defer attribute used to ensure script runs after HTML contect loads-->
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credits</title>
+    <link rel="stylesheet" type="text/css" href="styles/Style.css">
+    <link rel="icon" type="image/png" href="assets/bugs/bugG-favicon.png"> <!--Adds favicon to website-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--points to boxpassIcons CSS file hosted on the web -->
+    <style>
+        /* Confetti thumbnail for the canvas-confetti credit card (only used on this page) */
+        .confetti-demo {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .confetti-demo .bxs-party {
+            font-size: 64px;
+            color: #0B5345;
+            transition: transform 0.2s ease;
+        }
+
+        .confetti-demo:hover .bxs-party,
+        .confetti-demo:focus-visible .bxs-party {
+            transform: scale(1.12) rotate(-8deg);
+        }
+
+        .confetti-demo:focus-visible {
+            outline: 2px solid #117A65;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 6px;
+            border-radius: 2px;
+        }
+
+        .confetti-hint {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #117A65;
+        }
+    </style>
+</head>
+
+<body id="credits">
+    <header>
+        <!-- Navigation bar -->
+        <nav id="navBar">
+            <a href="index.html"><img id="logo" src="assets/Logo.png" alt="Bug Blitz Logo" width="100"
+                    height="100"></a>
+            <ul>
+                <!-- Navigation links -->
+                <li><a class="navContent" href="index.html">Home</a></li>
+                <li id="gameLink"><a class="navContent" onclick="gameRedirect('gameLink')" href="#">Game</a></li>
+                <li><a class="navContent" href="index.html#howToPlay">How to play</a></li>
+                <li><a class="navContent" href="LeadederboardPage.html">High Scores</a></li>
+                <li id="loginLink"><a class="navContent" href="LoginPage.html">Log in</a></li>
+                <li id="signupLink"><a class="navContent" href="SignUpPage.html">Sign up</a></li>
+                <li id="iconList-item" onmouseover="showUserMenu()" onmouseout="hideUserMenu()">
+                    <!-- User icon and dropdown menu -->
+                    <i id="userIcon" class='bx bx-user'></i>
+                    <ul id="userMenu" class="user-menu">
+                        <li><a href="#" onclick="logOut()">Log out</a></li>
+                        <li><a href="#" onclick="displayUesrInfo('modalUserInfo')">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="creditsMain">
+        <h1>Credits</h1>
+        <p class="credits-intro">Bug Blitz uses the following third-party assets. Thank you to all the creators!</p>
+
+        <!-- Backgrounds -->
+        <h2>Backgrounds</h2>
+        <div class="credits-grid">
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/main_bg.png"
+                        alt="Cartoon forest game background with tall trees" loading="lazy"></div>
+                <h3>Free Cartoon Forest Game Backgrounds</h3>
+                <a class="credit-line" href="https://craftpix.net/freebies/free-cartoon-forest-game-backgrounds/"
+                    target="_blank" rel="noopener noreferrer">Designed by CraftPix – CraftPix.net</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/antBg.png"
+                        alt="Cartoon desert forest landscape in daytime" loading="lazy"></div>
+                <h3>Desert forest landscape at daytime</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/desert-forest-landscape-daytime-scene_16262432.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by brgfx – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/flyBg.png"
+                        alt="Cartoon park scene with rubbish on the ground" loading="lazy"></div>
+                <h3>Rubbish in park scene</h3>
+                <a class="credit-line" href="https://www.magnific.com/free-vector/rubbish-park-scene_18973309.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by brgfx – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/beetleBg.png"
+                        alt="Cartoon desert landscape with sand dunes" loading="lazy"></div>
+                <h3>Desert landscape background</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/desert-landscape-background-video-conferencing_9800021.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by Freepik – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/spiderBg.png"
+                        alt="Dark hallway of an old abandoned house at night" loading="lazy"></div>
+                <h3>Old abandoned house hallway at night</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/old-abandoned-house-hallway-night_7588760.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by upklyak – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bg/grass.png" alt="Strip of green grass with grey rocks"
+                        loading="lazy"></div>
+                <h3>Grass with rocks</h3>
+                <a class="credit-line"
+                    href="https://gallery.yopriceville.com/Free-Clipart-Pictures/Grass-Grounds-Coverings-PNG-Clipart/Grass_with_Rocks_Transparent_PNG_Clipart"
+                    target="_blank" rel="noopener noreferrer">Designed by Yopriceville – gallery.yopriceville.com</a>
+            </article>
+        </div>
+
+        <!-- Bugs -->
+        <h2>Bugs</h2>
+        <div class="credits-grid">
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/elements/bug.png" alt="Shiny green beetle seen from above"
+                        loading="lazy"></div>
+                <h3>Green beetle</h3>
+                <a class="credit-line" href="https://creazilla.com/media/clipart/32449/green-beetle" target="_blank"
+                    rel="noopener noreferrer">Designed by valessiobrito – Creazilla.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bugs/fly/fly.jpg"
+                        alt="Housefly with red eyes and translucent wings" loading="lazy"></div>
+                <h3>Housefly</h3>
+                <a class="credit-line" href="https://www.magnific.com/free-vector/housefly_5601868.htm" target="_blank"
+                    rel="noopener noreferrer">Designed by brgfx – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bugs/ant/ant.jpg"
+                        alt="Cartoon ant with black and red stripes" loading="lazy"></div>
+                <h3>Ant with black and red stripes</h3>
+                <a class="credit-line"
+                    href="https://www.vecteezy.com/vector-art/54077106-ant-with-black-and-red-stripes-illustration"
+                    target="_blank" rel="noopener noreferrer">Designed by Mat soleh – Vecteezy.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bugs/beetle/beetle.jpg"
+                        alt="Dark metallic dung beetle seen from above" loading="lazy"></div>
+                <h3>Metallic dung beetle</h3>
+                <a class="credit-line"
+                    href="https://www.vecteezy.com/vector-art/1486432-metallic-dung-beetle-isolated-on-white-background"
+                    target="_blank" rel="noopener noreferrer">Designed by Graphics RF – Vecteezy.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/bugs/spider/spider.jpg"
+                        alt="Brown spider with long thin legs" loading="lazy"></div>
+                <h3>Spider</h3>
+                <a class="credit-line" href="https://www.magnific.com/free-vector/spider_3415210.htm" target="_blank"
+                    rel="noopener noreferrer">Designed by rawpixel.com – Magnific.com</a>
+            </article>
+        </div>
+
+        <!-- Weapons -->
+        <h2>Weapons</h2>
+        <div class="credits-grid">
+            <article class="credit-card credit-card-set">
+                <div class="credit-thumb credit-thumb-set">
+                    <img src="assets/blitz_weapons/ant_kill/antKiller1.png" alt="Ant killer spray bottle icon"
+                        loading="lazy">
+                    <img src="assets/blitz_weapons/zap/zap1.png" alt="Yellow electric fly swatter icon" loading="lazy">
+                    <img src="assets/blitz_weapons/spray_gun/sprayGun1.png" alt="Pest control spray gun icon"
+                        loading="lazy">
+                    <img src="assets/blitz_weapons/pesticide/pesticide1.png" alt="Red pesticide pump sprayer icon"
+                        loading="lazy">
+                </div>
+                <h3>Pest control icons set</h3>
+                <a class="credit-line" href="https://www.magnific.com/free-vector/pest-control-icons-set_3792129.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by macrovector – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/blitz_weapons/spray/sprayShow2.jpg"
+                        alt="Blue and yellow bug spray can with a mosquito label" loading="lazy"></div>
+                <h3>Bug spray color icon</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/bug-spray-color-icon-vector-illustration_28796233.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by chikenbugagashenka – Magnific.com</a>
+            </article>
+        </div>
+
+        <!-- Shoes -->
+        <h2>Shoes</h2>
+        <div class="credits-grid">
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/shoes/shoe.png"
+                        alt="Green leprechaun shoe with a gold buckle" loading="lazy"></div>
+                <h3>Leprechaun shoe</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/leprechaun-shoe-boot-accessory-icon_70015878.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by jemastock – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/shoes/shoe2.png" alt="Pair of blue tennis shoes"
+                        loading="lazy"></div>
+                <h3>Blue tennis shoes</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/blue-tennis-shoes-sport-icon_73260400.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by jemastock – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/shoes/shoe3.png" alt="Red high heel shoe" loading="lazy">
+                </div>
+                <h3>Red high heel shoe</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/br/vetores-gratis/ilustracao-de-sapato-de-salto-alto-vermelho_1774221.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by katemangostar – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/shoes/shoe4.png"
+                        alt="Blue sport sneaker with white shoelaces" loading="lazy"></div>
+                <h3>Blue sport sneakers</h3>
+                <a class="credit-line"
+                    href="https://www.magnific.com/free-vector/modern-sport-sneakers-blue-color-with-white-shoelaces-realistic-single-image-white-background-isolated-illustration_7251220.htm"
+                    target="_blank" rel="noopener noreferrer">Designed by macrovector – Magnific.com</a>
+            </article>
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/shoes/shoe5.png" alt="Flat-style sneaker seen from the side"
+                        loading="lazy"></div>
+                <h3>Sneaker shoe</h3>
+                <a class="credit-line"
+                    href="https://www.vecteezy.com/vector-art/35863904-sneaker-shoe-concept-flat-design-vector-illustration-sneakers-in-flat-style-sneakers-side-view-fashion-sneakers"
+                    target="_blank" rel="noopener noreferrer">Designed by Syeda Marufa Islam Shanta – Vecteezy.com</a>
+            </article>
+        </div>
+
+        <!-- Interface elements -->
+        <h2>Interface Elements</h2>
+        <div class="credits-grid">
+            <article class="credit-card">
+                <div class="credit-thumb"><img src="assets/elements/mystery.jpg"
+                        alt="Grid of colourful blobs with question marks" loading="lazy"></div>
+                <h3>Color blob with question mark</h3>
+                <a class="credit-line"
+                    href="https://www.vecteezy.com/vector-art/22306305-color-blob-with-question-mark-symbol-set-vector-illustration"
+                    target="_blank" rel="noopener noreferrer">Designed by Ovidiu Timplaru – Vecteezy.com</a>
+            </article>
+            <article class="credit-card">
+                <!-- Tenor embed (the GIF isn't a local file); square box fits the 134px image area inside the thumbnail -->
+                <div class="credit-thumb">
+                    <div style="width: 134px; margin: 0 auto;">
+                        <div class="tenor-gif-embed" data-postid="3971686153073610452" data-share-method="host"
+                            data-aspect-ratio="1" data-width="100%"><a
+                                href="https://tenor.com/view/cat-jump-happy-happy-happy-gif-3971686153073610452">Cat Jump
+                                Happy Happy Happy Sticker</a>from <a href="https://tenor.com/search/cat+jump-stickers">Cat
+                                Jump Stickers</a></div>
+                    </div>
+                </div>
+                <h3>Cat jump happy happy happy GIF</h3>
+                <a class="credit-line"
+                    href="https://tenor.com/en-GB/view/cat-jump-happy-happy-happy-gif-3971686153073610452"
+                    target="_blank" rel="noopener noreferrer">Uploaded by AcapCore7 – Tenor.com</a>
+            </article>
+        </div>
+
+        <!-- Libraries -->
+        <h2>Libraries</h2>
+        <div class="credits-grid">
+            <article class="credit-card">
+                <div class="credit-thumb">
+                    <!-- Click for a live confetti burst -->
+                    <button type="button" class="confetti-demo" onclick="playConfettiDemo(this)"
+                        aria-label="Play a confetti burst demo">
+                        <span class="confetti-piece" style="left: 14%; top: 18%; background: #E74C3C; transform: rotate(20deg);"></span>
+                        <span class="confetti-piece" style="left: 30%; top: 70%; background: #F1C40F; transform: rotate(-35deg);"></span>
+                        <span class="confetti-piece" style="left: 24%; top: 40%; background: #3498DB; border-radius: 50%;"></span>
+                        <span class="confetti-piece" style="left: 72%; top: 16%; background: #2ECC71; transform: rotate(60deg);"></span>
+                        <span class="confetti-piece" style="left: 82%; top: 58%; background: #9B59B6; transform: rotate(-15deg);"></span>
+                        <span class="confetti-piece" style="left: 66%; top: 76%; background: #E67E22; border-radius: 50%;"></span>
+                        <span class="confetti-piece" style="left: 48%; top: 10%; background: #1ABC9C; transform: rotate(45deg);"></span>
+                        <span class="confetti-piece" style="left: 88%; top: 30%; background: #F1C40F; border-radius: 50%;"></span>
+                        <span class="confetti-piece" style="left: 10%; top: 62%; background: #9B59B6; transform: rotate(75deg);"></span>
+                        <i class='bx bxs-party'></i>
+                        <span class="confetti-hint">Click me!</span>
+                    </button>
+                </div>
+                <h3>canvas-confetti</h3>
+                <a class="credit-line" href="https://github.com/catdad/canvas-confetti" target="_blank"
+                    rel="noopener noreferrer">Designed by Kiril Vatev – GitHub</a>
+            </article>
+        </div>
+
+    </main>
+
+    <!-- footer of webpage -->
+    <footer>
+        <a href="index.html"><img id="logo" src="assets/Logo.png" alt="Bug Blitz Logo" width="100" height="100"></a>
+        <!-- Social media passIcons from boxpassIcons site -->
+        <a href="https://github.com/Ferfer8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/jennifer-nggada-662219314/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class='bx bxl-linkedin-square'></i></a>
+        <!-- Navigation section of footer -->
+        <div id="footerNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a onclick="gameRedirect('gameLink')" href="#">Game</a></li>
+                <li><a href="index.html#howToPlay">How to play</a></li>
+                <li><a href="LeadederboardPage.html">High Scores</a></li>
+                <li id="loginLink_footer"><a href="LoginPage.html">Log in</a></li>
+                <li id="signupLink_footer"><a href="SignUpPage.html">SignUp</a></li>
+            </ul>
+        </div>
+        <p>© 2023–2026 Jennifer Nggada · <a href="credits.html" id="creditsLink">Credits</a></p>
+    </footer>
+
+    <!-- User settings modal -->
+    <div id="modalUserInfo" class="modal-userInfo">
+        <div class="userInfo-modalContent">
+            <span class="close" onclick="closeModal('modalUserInfo')">&times;</span>
+            <h1>User Settings</h1>
+            <ul>
+                <li> <a href="#" onclick="openAccountModal()"> <i class='bx bx-user'></i> Account <i
+                            class='bx bx-chevron-right'> </i> </a> </li>
+                <li> <a href="#" onclick="openGameModal()"> <i class='bx bx-joystick'></i> Game <i
+                            class='bx bx-chevron-right chevron-align'> </i> </a></li>
+                <li> <a href="#" onclick="openHelpModal()"> <i class='bx bx-help-circle'></i> Help <i
+                            class='bx bx-chevron-right chevron-align'> </i> </a> </li>
+            </ul>
+        </div>
+
+        <!-- Modal sub-section for account details-->
+        <div id="accountModal" class="modal-sub-section">
+            <i id="userIcon" class='bx bx-user'></i>
+            <div id="userDetails">
+                <p> <i class='bx bxs-envelope'></i> Email: </p>
+                <p> <i class='bx bxs-user'></i> Username: </p>
+                <p> <i class='bx bxs-party'></i> Birthday: </p>
+                <p> <i class='bx bxs-award'></i> Easy Mode Highscore: </p>
+                <p> <i class='bx bxs-award'></i> Hard Mode Highscore: </p>
+            </div>
+        </div>
+
+        <!-- Modal sub-section for game settings-->
+        <div id="gameModal" class="modal-sub-section">
+            <h3>Mute game audio</h3>
+            <button onclick="addMuteAudio()"> <i id="audioIcon" class='bx bxs-volume-full'></i> </button>
+            <h3>Choose Bug</h3>
+            <table id="bugSelection" class="game-selection">
+                <tr>
+                    <td><img id="bugPic" src="assets/elements/bug.png" style="cursor: pointer;"></td>
+                    <td><img id="antPic" class="unlock-bug" src="assets/bugs/ant/antH.png"></td>
+                    <td><img id="flyPic" class="unlock-bug" src="assets/bugs/fly/flyH.png"></td>
+                    <td><img id="beetlePic" class="unlock-bug" src="assets/bugs/beetle/beetleH.png"></td>
+                    <td><img id="spiderPic" class="unlock-bug" src="assets/bugs/spider/spiderH.png"></td>
+                <tr>
+            </table>
+
+            <h3>Choose Blitz Weapon</h3>
+            <table id="weaponSelection" class="game-selection">
+                <tr>
+                    <td><img id="defaultSparyPic" src="assets/blitz_weapons/spray/sprayshow2.jpg"
+                            style="cursor: pointer;"></td>
+                    <td><img id="antKillPic" class="unlock-bug" src="assets/blitz_weapons/ant_kill/antKillH.png"></td>
+                    <td><img id="zapPic" class="unlock-bug" src="assets/blitz_weapons/zap/zapH.png"></td>
+                    <td><img id="sprayGunPic" class="unlock-bug" src="assets/blitz_weapons/spray_gun/sprayGunH.png">
+                    </td>
+                    <td><img id="pesticidePic" class="unlock-bug" src="assets/blitz_weapons/pesticide/pesticideH.png">
+                    </td>
+                <tr>
+            </table>
+        </div>
+
+        <!-- Modal sub-section for help-->
+        <div id="helpModal" class="modal-sub-section">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"
+                        onclick="toggleFaq(this)">
+                        <span>How do I play?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+                        <div class="faq-answer-inner">
+                            <p>Log in, choose Easy or Hard mode, then hold down your mouse or trackpad and swipe across the bugs to blitz them. Each bug is worth 1 point. Blitz as many as you can before the 2-minute timer runs out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"
+                        onclick="toggleFaq(this)">
+                        <span>What happens if I hit a shoe?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+                        <div class="faq-answer-inner">
+                            <p>Swiping a shoe takes 10 seconds off your timer, and the timer flashes red. Let go of the mouse to move past shoes safely.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"
+                        onclick="toggleFaq(this)">
+                        <span>What's the difference between Easy and Hard mode?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+                        <div class="faq-answer-inner">
+                            <p>In Hard mode, bugs and shoes move much faster and more of them appear at once. Each mode has its own highscore and leaderboard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"
+                        onclick="toggleFaq(this)">
+                        <span>How do I unlock new bugs and weapons?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+                        <div class="faq-answer-inner">
+                            <p>Reach these scores in a single game to unlock a new bug and its weapon:</p><ul><li><strong>Easy, 300 points:</strong> Ant + ant killer spray</li><li><strong>Easy, 500 points:</strong> Fly + electric swatter</li><li><strong>Hard, 100 points:</strong> Beetle + spray gun</li><li><strong>Hard, 300 points:</strong> Spider + pesticide sprayer</li></ul><p>A congratulations message appears at the end of the game when you unlock something.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"
+                        onclick="toggleFaq(this)">
+                        <span>How do I change my bug or weapon?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+                        <div class="faq-answer-inner">
+                            <p>Go to User Settings &rarr; Game and click any unlocked bug or weapon. Locked ones are crossed out. Your bug also changes the game's background and the shoes you'll need to avoid.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"
+                        onclick="toggleFaq(this)">
+                        <span>Can I pause or quit a game?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+                        <div class="faq-answer-inner">
+                            <p>Yes. Use the pause button in the top-right corner to pause and resume. The arrow in the top-left corner leaves the game and takes you back to mode selection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"
+                        onclick="toggleFaq(this)">
+                        <span>How does the leaderboard work?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+                        <div class="faq-answer-inner">
+                            <p>The High Scores page shows the top 5 highscores for Easy and Hard mode from players who have played on this browser.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"
+                        onclick="toggleFaq(this)">
+                        <span>How do I mute the game?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+                        <div class="faq-answer-inner">
+                            <p>Go to User Settings &rarr; Game &rarr; Mute game audio and click the speaker button to turn game sounds on or off.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" id="faq-q9" aria-expanded="false" aria-controls="faq-a9"
+                        onclick="toggleFaq(this)">
+                        <span>Where is my progress saved?</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </button>
+                    <div class="faq-answer" id="faq-a9" role="region" aria-labelledby="faq-q9">
+                        <div class="faq-answer-inner">
+                            <p>Your account, highscores, and unlocks are saved in this browser, so clearing your browser data or switching devices will reset them. Your chosen bug, weapon, and mute setting reset to the defaults each time you log in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="script/script.js" defer></script>
+<!-- Loads the Tenor cat GIF on the Interface Elements card -->
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<!-- canvas-confetti library, only used for the live demo on the Libraries card -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+    function playConfettiDemo(button) {
+        //Fires a short confetti burst from the card that was clicked
+        if (typeof confetti !== 'function') {
+            return; //Library failed to load, so the demo is skipped
+        }
+
+        let rect = button.getBoundingClientRect();
+        confetti({
+            particleCount: 80,
+            spread: 70,
+            startVelocity: 30,
+            origin: {
+                x: (rect.left + rect.width / 2) / window.innerWidth,
+                y: (rect.top + rect.height / 2) / window.innerHeight
+            },
+            disableForReducedMotion: true
+        });
+    }
+</script>
+<!-- defer attribute used to ensure script runs after HTML contect loads-->
+
+</html>
